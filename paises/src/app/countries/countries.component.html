@@ -2,7 +2,9 @@
   <h1>Countries</h1>
   <ul>
     <li *ngFor="let country of countries">
+      <a routerLink="/detail/{{ country.alpha3Code }}">
       {{ country.name }}
+    </a>
     </li>
   </ul>
 </div>
