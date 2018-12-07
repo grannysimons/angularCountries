@@ -7,12 +7,14 @@ import { CountriesComponent } from './countries/countries.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CountryComponent } from './country/country.component';
+import { CountrySearchComponent } from './country-search/country-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesComponent,
-    CountryComponent
+    CountryComponent,
+    CountrySearchComponent
   ],
   imports: [
     BrowserModule,

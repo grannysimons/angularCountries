@@ -1,0 +1,6 @@
+<input #searchBox (input)="search(searchBox.value)" />
+<ul>
+  <li *ngFor="let country of countries$ | async">
+    <a routerLink="/detail/{{ country.alpha3Code }}">{{ country.name }}</a>
+  </li>
+</ul>

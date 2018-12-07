@@ -34,4 +34,13 @@ export class CountryService {
       // catchError(this.handleError('getCountry'))
     );
   }
+  searchCountries(term: string): Observable<Country[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Country[]>(`${this.countriesUrl}/name/${term}`)
+    .pipe(
+      catchError(this.handleError<Country[]>('searchCountries'))
+    );
+  }
 }
