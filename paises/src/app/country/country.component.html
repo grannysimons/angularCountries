@@ -1,3 +1,30 @@
-<p>
-  country works!
-</p>
+<div *ngIf="country" class="country">
+  <h1>{{ country.name }}</h1>
+  <ul>
+    <li>Capital: {{ country.capital }}</li>
+    <li>Subregion: {{ country.subregion }}</li>
+    <li>Region: {{ country.region }}</li>
+    <li>Population: {{ country.population }} inhabitants</li>
+    <li>Currencies:
+      <ul>
+        <li *ngFor="let obj of country.currencies">
+          {{ obj.name | json }}
+        </li>
+      </ul>
+    </li>
+    <li>Languages:
+      <ul>
+        <li *ngFor="let obj of country.languages">
+          {{ obj.nativeName | json }}
+        </li>
+      </ul>
+    </li>
+    <li>Timezones:
+      <ul>
+        <li *ngFor="let obj of country.timezones">
+          {{ obj | json }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

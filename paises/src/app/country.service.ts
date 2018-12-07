@@ -28,7 +28,10 @@ export class CountryService {
       catchError(this.handleError('getCountries', []))
     );
   }
-  getCountry(id: number): Country {
-    return;
+  getCountry(code: string): Observable<Country> {
+    return this.http.get<Country>(`${this.countriesUrl}/alpha/${code}`)
+    .pipe(
+      // catchError(this.handleError('getCountry'))
+    );
   }
 }
