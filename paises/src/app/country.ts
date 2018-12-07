@@ -5,10 +5,8 @@ export class Country {
   subregion: string;
   region: string;
   population: number;
-  currencies: [{
-    name: string,
-  }];
-  languages: string[];
+  currencies: [];
+  languages: [];
   timezones: string[];
   flag: string[];
 }
